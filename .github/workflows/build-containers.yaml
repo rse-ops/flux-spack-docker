@@ -6,6 +6,7 @@ on:
   pull_request:
     paths:
     - spack/Dockerfile.*
+    - spack/Dockerfile
 
   # Always have a base image ready to go - this is a nightly build
   schedule:
@@ -34,7 +35,8 @@ jobs:
 
         # Dockerfiles to build, a matrix supports future expanded builds
         # spack: flux-core built by spack
-        container: [[spack/Dockerfile.base, ghcr.io/rse-ops/flux-spack-base, 'true']]
+        container: [[spack/Dockerfile.base, ghcr.io/rse-ops/flux-spack-base, 'true'],
+                    [spack/Dockerfile, ghcr.io/rse-ops/flux-spack-ubuntu, 'true']]
 
     runs-on: ubuntu-latest
     name: Build

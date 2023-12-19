@@ -30,3 +30,4 @@ ENV DEBIAN_FRONTEND=noninteractive
 # The user will see the view on shell into the container
 WORKDIR /opt/
 ENTRYPOINT ["/bin/bash"]
+
